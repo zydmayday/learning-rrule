@@ -92,5 +92,16 @@ for (let i = 0; i < 5 * 60; i++) {
   getBenchmark();
 }
 
-console.log(benchmark);
 writeFile('benchmark.json', JSON.stringify(benchmark), () => {});
+
+console.log(`Generate Rules Min Time: ${Math.min(...benchmark.generateRulesTime)}`);
+console.log(`Generate Rules Max Time: ${Math.max(...benchmark.generateRulesTime)}`);
+console.log(`Generate Rules Avg Time: ${benchmark.generateRulesTime.reduce((x, y) => x + y, 0) / benchmark.generateRulesTime.length}`);
+
+console.log(`Filter Rules Min Time: ${Math.min(...benchmark.filterRulesTime)}`);
+console.log(`Filter Rules Max Time: ${Math.max(...benchmark.filterRulesTime)}`);
+console.log(`Filter Rules Avg Time: ${benchmark.filterRulesTime.reduce((x, y) => x + y, 0) / benchmark.filterRulesTime.length}`);
+
+console.log(`Filter Rules Min Count: ${Math.min(...benchmark.filteredRulesNum)}`);
+console.log(`Filter Rules Max Count: ${Math.max(...benchmark.filteredRulesNum)}`);
+console.log(`Filter Rules Avg Count: ${benchmark.filteredRulesNum.reduce((x, y) => x + y, 0) / benchmark.filteredRulesNum.length}`);
