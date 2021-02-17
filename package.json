@@ -1,0 +1,17 @@
+{
+  "name": "learning-rrule",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/zydmayday/learning-rrule.git",
+  "author": "zyd <zydmayday@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "chartjs-chart-box-and-violin-plot": "^2.3.0",
+    "rrule": "^2.6.8"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^14.14.28"
+  }
+}
